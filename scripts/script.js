@@ -108,10 +108,10 @@
 
 //exercício 4
 // Solicitar a taxa de câmbio e o valor desejado ao usuário
-var taxa = parseFloat(prompt("Digite a taxa de câmbio:"));
-var valorDesejado = parseFloat(prompt("Digite o valor desejado:"));
-var valorConvertido = taxa * valorDesejado;
-alert("O valor convertido é: " + valorConvertido);
+// var taxa = parseFloat(prompt("Digite a taxa de câmbio:"));
+// var valorDesejado = parseFloat(prompt("Digite o valor desejado:"));
+// var valorConvertido = taxa * valorDesejado;
+// alert("O valor convertido é: " + valorConvertido);
 
 
 
