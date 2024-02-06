@@ -47,12 +47,12 @@ header, main{
     background: #7b2cbf;
     background: var(--background);
     transition: opacity .5s;
+    
    }
    
    .card-info {
     --color: #181818;
     background: var(--color);
-    color: var(--color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -60,6 +60,7 @@ header, main{
     height: 100%;
     overflow: visible;
     border-radius: .7rem;
+    padding-top: 15px;
    }
    
    .card .title {
@@ -73,7 +74,7 @@ header, main{
    }
    
    .card:hover .card-info {
-    color: #f7ba2b;
+    color: #7b2cbf;
     transition: color 1s;
    }
 
@@ -84,7 +85,6 @@ header, main{
 
    .cards{
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
    }
