@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 
 
@@ -6,7 +6,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font: Poppins;
+  font: Montserrat;
   
 }
 
@@ -228,7 +228,7 @@ header{
 .titleright{
   color: white;
   display: flex;
-  padding-left: 200px;
+  padding-left: 9px;
   margin-top: 50px;
   font-size: 35px;
   
@@ -236,7 +236,7 @@ header{
 
 .pt1{
   display: flex;
-
+  justify-content: space-around;
 }
 
 .lado1{
@@ -353,6 +353,80 @@ header{
 }
 
 .classes{
-  margin-left: 190px;
   margin-top: 30px;
+}
+
+.right{
+  padding-right: 250px;
+}
+
+.textleft{
+  color: white;
+  display: flex;
+  padding-left: 220px;
+  margin-top: 50px;
+  font-size: 35px;
+}
+
+.quadrado{
+  width: 200px;
+  height: 200px;
+  background-color: #C77DFF;
+  border-radius: 25px;
+  display: flex;
+}
+
+.imagem{
+  width: 150px;
+  height: 150px;
+  background-color: #C77DFF;
+  border-radius: 25px;
+  z-index: 2;
+  margin-top: 24px;
+  margin-left: 29px;
+}
+
+.imagem2{
+  width: 130px;
+  height: 130px;
+  background-color: #C77DFF;
+  border-radius: 25px;
+  z-index: 2;
+  margin-top: 35px;
+  margin-left: 36px;
+}
+
+.side{
+  color: white;
+  font-size: 19px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.side2{
+  color: white;
+}
+
+.cardsschedule{
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-left: 160px;
+  margin-right: 160px;
+}
+
+.line{
+  border: 1px solid #37323b;
+  width: 35%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.topicos{
+  color: white;
+  font-size: 28px;
+  padding: 100px;
+  padding-top: 300px;
+
 }
