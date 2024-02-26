@@ -430,3 +430,12 @@ header{
   padding-top: 300px;
 
 }
+
+.righta1 img{
+  width: 400px;
+  height: 420px;
+}
+
+.containera1{
+  display: flex;
+}
