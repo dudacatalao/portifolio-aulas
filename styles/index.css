@@ -439,3 +439,7 @@ header{
 .containera1{
   display: flex;
 }
+
+.description{
+  margin-bottom: 40px;
+}
