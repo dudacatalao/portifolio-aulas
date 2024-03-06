@@ -1,5 +1,3 @@
-//Desenvolva um programa que leia 10 números e apresente os valores pares. Caso não tenha nenhum número par apresente a mensagem “Todos os números são ímpares.”
-
 function imparOuPar(){
     let numbers = []
 
@@ -7,6 +5,16 @@ function imparOuPar(){
         let number = Number(prompt('Insira um número: '));
         numbers.push(number);
     }
+
+    let numPares = numbers.filter(function(numero){
+        return numero % 2 === 0;
+    });
+
+    if (numPares.length > 0) {
+        alert(`Números pares inseridos: ${numPares.join(', ')}`);
+    } else {
+        alert('Todos os números inseridos são ímpares');
+    }
 }
 
-imparOuPar()
+imparOuPar();
