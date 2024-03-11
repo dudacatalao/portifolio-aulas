@@ -41,3 +41,6 @@ class contaPoupanca extends Banco{
         this._limiteTransacoes = limiteTransacoes
     }
 }
+
+let minhaContaPoupanca = new contaPoupanca(1000, "Corrente");
+minhaContaPoupanca.sacar();
