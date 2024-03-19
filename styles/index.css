@@ -644,3 +644,13 @@ header {
 		top: 120%;
 	}
 }
+
+.textInformation{
+	text-decoration: none;
+	color: white;
+	transition: 0.7s;
+}
+
+.textInformation:hover{
+	color: #b049fe;
+}

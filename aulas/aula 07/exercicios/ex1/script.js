@@ -1,7 +1,6 @@
 class Banco {
-    constructor(saldo, tipo) {
+    constructor(saldo) {
         this._saldo = saldo;
-        this._tipo = tipo;
     }
 
     get saldo() {
@@ -21,26 +20,33 @@ class Banco {
         } else {
             this._saldo -= valor;
             alert(`Saldo atual: R$ ${this._saldo}`);
-            this.sacar()
         }
     }
 }
 
-let minhaConta = new Banco(1000, "Corrente");
-minhaConta.sacar();
-
 class contaCorrente extends Banco{
-    constructor(){
+    constructor(saldo, numero_cheques, numero_cartaoCredito){
+        super(saldo);
+        this.numero_cheques = numero_cheques;
+        this.numero_cartaoCredito = numero_cartaoCredito;
+    }
 
+    emitirCheque() {
+        let beneficiario = prompt('Insira o nome do beneficiário do cheque: ');
+        let valorCheque = parseFloat(prompt('Insira o valor do cheque: '));
+        
+        alert(`Conferindo informações\nBeneficiário: ${beneficiario}\nValor do cheque: R$ ${valorCheque}`);
     }
 }
 
 class contaPoupanca extends Banco{
-    constructor(limite, limiteTransacoes){
-        this._limite = limite
-        this._limiteTransacoes = limiteTransacoes
+    constructor(saldo, limite, limiteTransacoes){
+        super(saldo);
+        this._limite = limite;
+        this._limiteTransacoes = limiteTransacoes;
     }
 }
 
-let minhaContaPoupanca = new contaPoupanca(1000, "Corrente");
-minhaContaPoupanca.sacar();
+let minhaContaCorrente = new contaCorrente(1000);
+minhaContaCorrente.sacar();
+minhaContaCorrente.emitirCheque(); 
