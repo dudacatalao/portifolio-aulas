@@ -79,7 +79,7 @@ if (option == 1){
      minhaContaCorrente.emitirCheque()
 }else if(option == 2){
     let saldo = Number(prompt('Insira o valor do seu saldo bancario inicial:'))
-    let minhaContaPoupança = new contaPoupanca(saldo)
+    let minhaContaPoupança = new contaPoupanca(saldo, 10)
     minhaContaPoupança.sacar()
     minhaContaPoupança.renderJuros()
 }
