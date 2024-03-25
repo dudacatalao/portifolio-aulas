@@ -1,79 +1,49 @@
-class Livros {
-    constructor(nome, autor, identificador, categoria, quantidade, disponivel) {
-        this.nome = nome;
-        this.autor = autor;
-        this.identificador = identificador;
-        this.categoria = categoria;
-        this.quantidade = quantidade;
-        this.disponivel = disponivel;
+class User {
+    constructor(nameUser, email, password) {
+        this.nameUser = nameUser;
+        this.email = email;
+        this.password = password;
     }
-
-    livros = [
-        { identificador: 1, nome: 'é assim que acaba', autor: 'Collen Hoover', categoria: 'Romance', disponivel: true },
-        { identificador: 2, nome: 'é assim que começa', autor: 'Collen Hoover', categoria: 'Romance', disponivel: true },
-        { identificador: 3, nome: 'daisy jones & the six', autor: 'Taylor Reid', categoria: 'Ficção', disponivel: true },
-        { identificador: 4, nome: 'divergente', autor: 'Veronica Roth', categoria: 'Ficção', disponivel: true }
-    ];
 }
 
-class Livraria extends Livros {
+class Authentication {
     constructor() {
-        super();
+        this.users = [];
     }
 
-    menu() {
-        let escolhaUser = Number(prompt('O que deseja realizar:\n[1] Escolher um Livro\n[2] Realizar devolução\n[3] Sair'));
+    register() {
+        alert('Olá, seja bem-vindo ao nosso sistema');
+        let name = prompt('Insira seu nome completo: ');
+        let email = prompt('Insira seu email: ');
+        let senha = prompt('Insira sua senha: ');
 
-        switch (escolhaUser) {
-            case 1:
-                this.emprestimo();
-                break;
-            case 2:
-                this.devolucao();
-                break;
-            case 3:
-                process.exit();
-                break;
-            default:
-                alert('Opção inválida');
-        }
-    }
+        if (senha) {
+            let confirmacao = prompt('Confirme a senha: ');
 
-    emprestimo() {
-        let livroEscolhido = prompt('Qual o livro que deseja?').toLocaleLowerCase();
-        let livroEncontrado = this.livros.find(livro => livro.nome === livroEscolhido);
-
-        if (livroEncontrado) {
-            if (livroEncontrado.disponivel) {
-                alert(`Livro ${livroEncontrado.nome} disponível para empréstimo.`);
-                livroEncontrado.disponivel = false;
-                alert('Você deve devolver o livro em 6 dias.');
+            if (senha === confirmacao) {
+                alert('Cadastro realizado com sucesso!');
+                const newUser = new User(name, email, senha);
+                this.users.push(newUser); 
             } else {
-                alert('Este livro não está disponível.');
+                alert('As senhas não coincidem');
+                this.register();
             }
         } else {
-            alert('Livro não encontrado.');
+            alert('Você precisa criar uma senha');
+            this.register();
         }
+
+        console.log(this.users)
     }
 
-    devolucao() {
-        let livroDevolucao = prompt('Qual o livro que deseja devolver?').toLocaleLowerCase();
-        let livroEncontrado = this.livros.find(livro => livro.nome === livroDevolucao);
+    login() {}
 
-        if (livroEncontrado) {
-            if (livroEncontrado.disponivel){
-                alert('Este livro não foi emprestado')
-            }else{
-                alert(`Obrigado pela devolução do livro ${livroEncontrado.nome}.`);
-                livroEncontrado.disponivel = true;
-            }
-        } else {
-            alert('Este livro não é da nossa livraria.');
-        }
-    }
+    logout() {}
+
+    menu() {}
 }
 
-const livraria = new Livraria();
-while (true){
-    livraria.menu();
-}
+
+const auth = new Authentication();
+auth.register();
+console.log(auth.users); 
