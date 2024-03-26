@@ -12,7 +12,6 @@ class Authentication {
     }
 
     register() {
-        alert('Olá, seja bem-vindo ao nosso sistema');
         let name = prompt('Insira seu nome completo: ');
         let email = prompt('Insira seu email: ');
         let senha = prompt('Insira sua senha: ');
@@ -36,14 +35,48 @@ class Authentication {
         console.log(this.users)
     }
 
-    login() {}
+    login() {
+        let email = prompt('Insira seu email:')
+        let senha = prompt('Insira sua senha:')
+
+        if(email in this.users.email ||senha in this.users.senha ){
+            alert('Logado com sucesso!')
+        }else{
+            alert('Você ainda não possui conta')
+            let option = prompt('Deseja criar uma?')
+
+            if (option == true){
+                alert('Redirecionando para o sistema de cadastro')
+                this.register()
+            }else{
+                alert('Obtigada!')
+            }
+        }
+    }
 
     logout() {}
 
-    menu() {}
+    menu(){
+        alert('Olá, seja bem-vindo ao nosso sistema');
+        let optionUser = Number(prompt('O que deseja realizar\n[1] Realizar Cadastro\n[2] Login\n[3] Logout'))
+
+        switch (optionUser){
+            case 1:
+                alert('Redirecionando para o sistema de cadastro..')
+                this.register()
+            case 2:
+                alert('Redirecionando para a área de Login..')
+                this.login()
+            case 3:
+                alert('Redirecionando para a área de Logout')
+                this.logout()
+        }
+    }
 }
 
 
 const auth = new Authentication();
-auth.register();
-console.log(auth.users); 
+while (true){
+    auth.menu();
+    console.log(auth.users); 
+}
